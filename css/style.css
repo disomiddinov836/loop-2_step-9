@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #4c7dfa;
+}
+
+.container {
+    background-color: white;
+    width: 450px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+header img {
+    cursor: pointer;
+    opacity: 0.5;
+    transition: 0.2s;
+    font-weight: 700;
+}
+
+header img:hover {
+    opacity: 1;
+}
+
+.map-box {
+    background: linear-gradient(rgba(62, 108, 246, 0.7), rgba(62, 108, 246, 0.7)), url(../img/map.png) no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 20px calc(20px + 8px);
+    margin: 0 -8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 15px rgb(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.travel {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.distance-container {
+    display: flex;
+    flex-grow: 0.8;
+    position: relative;
+}
+
+.distance-container::after {
+    content: url('../img/car.svg');
+    position: absolute;
+    transform: scale(0.6);
+    top: -25px;
+    left: calc(30% - 8px);
+}
+
+.distance {
+    height: 2px;
+    width: 100%;
+    position: relative;
+    background: linear-gradient(90deg, #fff 32%, rgba(255, 255, 255, 0.3)32%);
+}
+
+.distance::after,
+.distance::before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: -3px;
+}
+
+.distance::before {
+    left: -3px;
+}
+
+.distance::after {
+    right: -5px;
+}
+
+.country {
+    font-weight: 500;
+}
+
+.malumot {
+    display: flex;
+}
+
+.malumot-time,
+.malumot-distance {
+    width: 50%;
+    font-weight: 700;
+}
+
+.open-map__btn {
+    border: none;
+    outline: none;
+    transform: translateX(280px) translateY(40px);
+    background-color: #4478fa;
+    padding: 0.6em;
+    cursor: pointer;
+    transition: 0.2;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    color: white;
+}
+
+.open-map__btn img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.direction {
+    padding: 20px;
+    font-weight: 500;
+}
+
+.direction-city {
+    margin-bottom: 2rem;
+}
+
+.hamburg {
+    display: flex;
+    margin: 1.5rem 0;
+}
+
+.hamburg-info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+small {
+    color: #aaa;
+    font-size: 0.8em;
+}
+
+.street {
+    background: url(../img/streetview.jpg) no-repeat 0;
+    background-size: cover;
+    border-radius: 4px;
+    height: 4.5rem;
+    padding: 0.6rem;
+    transform: translateX(20px);
+}
+
+.street img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        height: 850px;
+    }
+
+    .open-map__btn {
+        transform: translateX(250px) translateY(40px);
+    }
+}
